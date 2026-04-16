@@ -1,14 +1,5 @@
 <?php
-session_start();
-header('Content-Type: application/json; charset=utf-8');
 // Restrict CORS to your domain (replace 'http://localhost' with your actual domain in production)
-header('Access-Control-Allow-Origin: http://localhost');
-header('Access-Control-Allow-Credentials: true');
-
-ini_set('display_errors', 0);
-ini_set('log_errors', 1);
-ini_set('error_log', 'C:/xampp/php/logs/php_error_log');
-
 try {
     require_once 'config.php'; // Include database configuration
 

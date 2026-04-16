@@ -1,8 +1,4 @@
 <?php
-session_start();
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-
 require_once 'config.php';
 
 // Check if user is logged in as admin

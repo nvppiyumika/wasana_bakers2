@@ -1,8 +1,4 @@
 <?php
-session_start();
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-
 require_once 'config.php';
 
 if (!isset($_SESSION['admin_id']) || $_SESSION['type'] !== 'admin') {
@@ -17,10 +13,10 @@ try {
         exit;
     }
 
-    $name = filter_var($_POST['name'] ?? '', FILTER_SANITIZE_STRING);
-    $category = filter_var($_POST['category'] ?? '', FILTER_SANITIZE_STRING);
+    $name = strip_tags($_POST['name'] ?? '');
+    $category = strip_tags($_POST['category'] ?? '');
     $price = filter_var($_POST['price'] ?? 0, FILTER_VALIDATE_FLOAT);
-    $availability = filter_var($_POST['availability'] ?? '', FILTER_SANITIZE_STRING);
+    $availability = strip_tags($_POST['availability'] ?? '');
 
     if (!$name || !$category || $price <= 0 || !in_array($availability, ['in_stock', 'out_of_stock'])) {
         echo json_encode(['success' => false, 'message' => 'Invalid input data']);

@@ -1,16 +1,10 @@
 <?php
-header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Credentials: true');
-header('Access-Control-Allow-Methods: POST');
-header('Access-Control-Allow-Headers: Content-Type');
-
 require_once 'config.php';
 
 try {
     $data = json_decode(file_get_contents('php://input'), true);
     $employee_id = filter_var($data['employee_id'] ?? 0, FILTER_VALIDATE_INT);
-    $name = filter_var($data['name'] ?? '', FILTER_SANITIZE_STRING);
+    $name = strip_tags($data['name'] ?? '');
     $email = filter_var($data['email'] ?? '', FILTER_SANITIZE_EMAIL);
     $role = $data['role'] ?? '';
     $hire_date = $data['hire_date'] ?? '';

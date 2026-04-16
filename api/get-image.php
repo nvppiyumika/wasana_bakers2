@@ -1,10 +1,4 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-
-ini_set('display_errors', 0);
-ini_set('log_errors', 1);
-ini_set('error_log', 'C:/xampp/php/logs/php_error_log');
-
 try {
     require_once 'config.php';
 
