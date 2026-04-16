@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasana Bakers</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Wasana Bakers Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#branches">Our Branches</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Cart</a>
+                <a href="#" class="login-btn" id="login-btn">Login/SignUp</a>
+                <a href="#" class="user-name-btn" id="user-name-btn" style="display: none;">User</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="images/Banner.jpg" alt="Hero Background" class="hero-bg">
+            <a href="#products" class="shop-now-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>The seed of Horana Wasana Bakery was planted by Mr. Dayananda Bobuwala and his wife Mrs. Anusha Wijayanthi Perera. In the search for a name for this new bakery, he wanted to add the name of the city Horana, which has a strong connection since his childhood. The foundation of Wasana Bakers was laid in 1995 when the current owner and his wife established it in Ratiyala, Govinna in Western Province.</p>
+            <div class="contact-info">
+                <p>Contact: <a href="mailto:info@wasanabakers.com">info@wasanabakers.com</a> | Phone: <a href="tel:+94111234567">+94 11 123 4567</a></p>
+                <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bread-slice"></i></div>
+                    <h3>Wasana Bakers</h3>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Wasana Reception Hall</h3>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Wasana Gimanhala</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="filter-container">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="all">All</option>
+                    <option value="cake">Cake</option>
+                    <option value="bread">Bread</option>
+                    <option value="pastry">Pastry</option>
+                    <option value="dessert">Dessert</option>
+                    <option value="sweets">Sweets</option>
+                </select>
+            </div>
+            <div class="products-grid"></div>
+        </div>
+    </section>
+
+    <section class="branches" id="branches">
+        <div class="container">
+            <h2>Our Branches</h2>
+            <!-- Branch content goes here -->
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="contact-name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="contact-email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="contact-message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Wasana Bakers. All rights reserved.</p>
+            <div class="footer-contact">
+                <p>Contact: <a href="mailto:info@wasanabakers.com">info@wasanabakers.com</a> | Phone: <a href="tel:+94111234567">+94 11 123 4567</a></p>
+                <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="popup" id="login-choice-popup">
+        <div class="popup-content">
+            <button class="popup-close" id="close-choice">&times;</button>
+            <h2>Choose Login Type</h2>
+            <div class="choice-buttons">
+                <button class="popup-btn" id="user-login-btn">User Login</button>
+                <button class="popup-btn" id="admin-login-btn">Admin Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="user-login-popup">
+        <div class="popup-content">
+            <button class="popup-close" id="close-user-login">&times;</button>
+            <h2>User Login</h2>
+            <form id="user-login-form">
+                <div class="form-group">
+                    <input type="text" id="username-email" placeholder="Username or Email" required>
+                </div>
+                <div class="form-group password-wrapper">
+                    <input type="password" id="password" placeholder="Password" required>
+                    <span class="toggle-password"><i class="fas fa-eye"></i></span>
+                </div>
+                <div class="popup-buttons">
+                    <button type="submit" class="popup-btn">Login</button>
+                    <button type="button" class="cancel-btn" id="cancel-user-login">Cancel</button>
+                </div>
+            </form>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="#" id="signup-link">SignUp Here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="signup-popup">
+        <div class="popup-content">
+            <button class="popup-close" id="close-signup">&times;</button>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <input type="text" id="first-name" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="last-name" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="address" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group password-wrapper">
+                    <input type="password" id="signup-password" placeholder="Password" required>
+                    <span class="toggle-password"><i class="fas fa-eye"></i></span>
+                </div>
+                <div class="form-group password-wrapper">
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                    <span class="toggle-password"><i class="fas fa-eye"></i></span>
+                </div>
+                <div class="popup-buttons">
+                    <button type="submit" class="popup-btn">Sign Up</button>
+                    <button type="button" class="cancel-btn" id="cancel-signup">Cancel</button>
+                </div>
+            </form>
+            <div class="login-link">
+                <p>Already have an account? <a href="#" id="login-link">Login Here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" id="admin-login-popup">
+        <div class="popup-content">
+            <button class="popup-close" id="close-admin-login">&times;</button>
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <input type="text" id="admin-username-email" placeholder="Username or Email" required>
+                </div>
+                <div class="form-group password-wrapper">
+                    <input type="password" id="admin-password" placeholder="Password" required>
+                    <span class="toggle-password"><i class="fas fa-eye"></i></span>
+                </div>
+                <div class="popup-buttons">
+                    <button type="submit" class="popup-btn">Login</button>
+                    <button type="button" class="cancel-btn" id="cancel-admin-login">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup" id="logout-popup">
+        <div class="popup-content">
+            <button class="popup-close" id="close-logout">&times;</button>
+            <h2>Logout</h2>
+            <p>Are you sure you want to logout?</p>
+            <div class="popup-buttons">
+                <button class="popup-btn" id="logout-confirm-btn">Logout</button>
+                <button class="cancel-btn" id="cancel-logout">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
