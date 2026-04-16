@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Wasana Bakers</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Wasana Bakers Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#branches">Our Branches</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" id="login-btn" class="login-btn">Login/SignUp</a>
+                <a href="#" id="user-name-btn" class="user-name-btn" style="display: none;">User</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="cart" class="cart">
+        <h2>Your Cart</h2>
+        <div class="container">
+            <div class="cart-content">
+                <div class="cart-items">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Subtotal</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dynamically populated by scripts.js -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="cart-summary">
+                    <h3>Cart Summary</h3>
+                    <div class="summary-details">
+                        <!-- Dynamically populated by scripts.js -->
+                    </div>
+                    <div class="cart-actions">
+                        <a href="index.html#products" class="continue-shopping-btn">Continue Shopping</a>
+                        <button id="checkout-btn" class="checkout-btn">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Wasana Bakers. All rights reserved.</p>
+            <div class="footer-contact">
+                <p>Contact: <a href="mailto:info@wasanabakers.com">info@wasanabakers.com</a> | Phone: +94 11 123 4567</p>
+                <p>Follow us: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popups -->
+    <div id="login-choice-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-choice">×</span>
+            <h2>Choose Login Type</h2>
+            <div class="popup-buttons">
+                <button id="user-login-btn" class="popup-btn">User Login</button>
+                <button id="admin-login-btn" class="popup-btn">Admin Login</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="user-login-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-user-login">×</span>
+            <h2>User Login</h2>
+            <form id="user-login-form">
+                <div class="form-group">
+                    <label for="username-email">Username or Email</label>
+                    <input type="text" id="username-email" name="username_email" required>
+                </div>
+                <div class="form-group password-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Login</button>
+                    <button type="button" class="cancel-btn" id="cancel-user-login">Cancel</button>
+                </div>
+            </form>
+            <p>Don't have an account? <a href="#" id="signup-link">SignUp Here</a></p>
+        </div>
+    </div>
+
+    <div id="signup-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-signup">×</span>
+            <h2>Sign Up</h2>
+            <form id="signup-form">
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first_name" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last_name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group password-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" name="password" required>
+                    <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="form-group password-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required>
+                    <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                    <button type="button" class="cancel-btn" id="cancel-signup">Cancel</button>
+                </div>
+            </form>
+            <p>Already have an account? <a href="#" id="login-link">Login Here</a></p>
+        </div>
+    </div>
+
+    <div id="admin-login-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-admin-login">×</span>
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <div class="form-group">
+                    <label for="admin-username-email">Username or Email</label>
+                    <input type="text" id="admin-username-email" name="username_email" required>
+                </div>
+                <div class="form-group password-group">
+                    <label for="admin-password">Password</label>
+                    <input type="password" id="admin-password" name="password" required>
+                    <button type="button" class="toggle-password"><i class="fas fa-eye"></i></button>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Login</button>
+                    <button type="button" class="cancel-btn" id="cancel-admin-login">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="logout-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-logout">×</span>
+            <h2>Logout</h2>
+            <p>Are you sure you want to logout?</p>
+            <div class="popup-buttons">
+                <button id="logout-confirm-btn" class="popup-btn">Logout</button>
+                <button id="cancel-logout" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
